@@ -490,6 +490,144 @@ footer p {
   font-size: 0.9rem;
 }
 
+/* --- PORTFOLIO CAROUSEL --- */
+.portfolio-section {
+  background-color: var(--color-bg-primary);
+  overflow: hidden;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-card);
+  box-shadow: var(--shadow-card);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  aspect-ratio: 16 / 9;
+  position: relative;
+}
+
+.slide-content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.carousel-slide:hover img {
+  transform: scale(1.05);
+}
+
+.slide-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 3rem 2rem 2rem;
+  background: linear-gradient(to top, rgba(10, 10, 11, 0.9), transparent);
+  color: white;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition);
+}
+
+.carousel-slide:hover .slide-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-overlay h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-accent-blue);
+}
+
+.slide-overlay p {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+}
+
+/* Controls */
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 1.5rem;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.carousel-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(19, 20, 23, 0.8);
+  border: 1px solid var(--color-border);
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  pointer-events: auto;
+  backdrop-filter: blur(5px);
+}
+
+.carousel-btn:hover {
+  background: var(--color-accent-blue);
+  color: var(--color-bg-primary);
+  border-color: var(--color-accent-blue);
+  box-shadow: 0 0 15px rgba(0, 225, 255, 0.4);
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.8rem;
+  z-index: 10;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+}
+
+.dot.active {
+  background: var(--color-accent-blue);
+  width: 25px;
+  border-radius: 10px;
+}
+
 /* --- ANIMATIONS --- */
 .reveal {
   opacity: 0;
@@ -529,6 +667,10 @@ footer p {
     grid-template-columns: 1fr;
     max-width: 450px;
     margin: 0 auto;
+  }
+
+  .carousel-slide {
+    aspect-ratio: 4 / 3;
   }
 }
 
