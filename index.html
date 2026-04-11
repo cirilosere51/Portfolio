@@ -3,180 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Doe | Creative Developer</title>
-    <meta name="description" content="Portfolio of John Doe, a Full Stack Developer specializing in crafting stunning web experiences.">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <title>Web Developer Portfolio</title>
+    <meta name="description" content="Portfolio of a Full-Stack Web Developer. Designing and building scalable, high-performance web applications.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#home" class="logo">JD.</a>
+            <a href="#home" class="logo">DEV<span>.PORTFOLIO</span></a>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Tech Stack</a></li>
+                <li><a href="#pricing">Solutions</a></li>
             </ul>
+            <a href="#contact" class="nav-cta">Reach Out</a>
         </div>
     </nav>
 
     <main>
-        <section id="home" class="hero">
-            <div class="hero-content reveal-on-scroll">
-                <h3>Hello, I'm</h3>
-                <h1 class="gradient-text">John Doe</h1>
-                <h2>Digital Architect & Developer</h2>
-                <p>I transform complex problems into beautiful, scalable, and intuitive digital experiences. Let's build something extraordinary together.</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+        <!-- Hero Section -->
+        <section id="home" class="hero section">
+            <div class="hero-container container">
+                <div class="hero-content reveal">
+                    <p class="hero-subtitle">Full-Stack Engineer</p>
+                    <h1 class="hero-title">Digital Architect & <br><span class="gradient-text">Web Developer</span></h1>
+                    <p class="hero-desc">I design and build scalable, high-performance web applications. From beautiful frontend interfaces to robust backend architectures, I turn complex problems into elegant code.</p>
+                    <a href="#contact" class="btn-primary">View GitHub Profile</a>
                 </div>
-            </div>
-            <div class="hero-graphic reveal-on-scroll delay-1">
-                <div class="glow-orb"></div>
-                <div class="glass-card hero-glass">
-                    <p class="code-snippet">
-                        <span class="keyword">const</span> <span class="variable">developer</span> = {<br>
-                        &nbsp;&nbsp;<span class="property">name</span>: <span class="string">'John Doe'</span>,<br>
-                        &nbsp;&nbsp;<span class="property">skills</span>: [<span class="string">'Frontend'</span>, <span class="string">'Backend'</span>]<br>
-                        };<br><br>
-                        <span class="function">innovate</span>(developer);
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="about">
-            <h2 class="section-title reveal-on-scroll">About Me</h2>
-            <div class="about-container">
-                <div class="about-text reveal-on-scroll">
-                    <p>With a passion for pristine code and pixel-perfect design, I bring ideas to life on the web. I've spent the last 5 years honing my craft in both frontend aesthetics and backend architecture.</p>
-                    <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source, or enjoying a good cup of coffee while sketching UI concepts.</p>
-                </div>
-                <div class="stats-grid reveal-on-scroll delay-1">
-                    <div class="stat-card glass-card">
-                        <h3>5+</h3>
-                        <p>Years Experience</p>
-                    </div>
-                    <div class="stat-card glass-card">
-                        <h3>50+</h3>
-                        <p>Projects Completed</p>
-                    </div>
-                    <div class="stat-card glass-card">
-                        <h3>100%</h3>
-                        <p>Client Satisfaction</p>
+                <div class="hero-image reveal delay-1">
+                    <div class="hero-img-wrapper">
+                        <img src="dev_hero_1775879778802.png" alt="Web Developer Hero Aesthetics">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="skills" class="skills">
-            <h2 class="section-title reveal-on-scroll">Technical Arsenal</h2>
-            <div class="skills-grid reveal-on-scroll">
-                <div class="skill-category glass-card">
-                    <h3>Frontend</h3>
-                    <div class="skill-tags">
-                        <span>React</span>
-                        <span>Vue.js</span>
-                        <span>TypeScript</span>
-                        <span>Tailwind CSS</span>
-                        <span>Three.js</span>
-                    </div>
+        <!-- Services Section -->
+        <section id="services" class="services-section section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <p class="section-subtitle">Core Proficiencies</p>
+                    <h2 class="section-title">Technical Expertise</h2>
                 </div>
-                <div class="skill-category glass-card">
-                    <h3>Backend</h3>
-                    <div class="skill-tags">
-                        <span>Node.js</span>
-                        <span>Python</span>
-                        <span>PostgreSQL</span>
-                        <span>GraphQL</span>
-                        <span>Docker</span>
-                    </div>
-                </div>
-                <div class="skill-category glass-card">
-                    <h3>Toolsing</h3>
-                    <div class="skill-tags">
-                        <span>Git</span>
-                        <span>Webpack</span>
-                        <span>Figma</span>
-                        <span>AWS</span>
-                        <span>Jest</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="projects">
-            <h2 class="section-title reveal-on-scroll">Selected Works</h2>
-            <div class="projects-grid">
-                <div class="project-card glass-card reveal-on-scroll">
-                    <div class="project-image" style="background: linear-gradient(45deg, #1f2937, #374151);"></div>
-                    <div class="project-info">
-                        <h3>FinTech Dashboard</h3>
-                        <p>A high-performance financial data visualization tool for enterprise clients.</p>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>D3.js</span>
+                <div class="services-grid">
+                    <div class="service-card reveal">
+                        <div class="service-icon">
+                            <img src="dev_frontend_1775879819823.png" alt="Frontend Development">
                         </div>
-                        <a href="#" class="project-link">View Project →</a>
+                        <h3>Frontend Engineering</h3>
+                        <p>Building highly interactive, beautiful, and accessible user interfaces using modern frameworks like React, Vue, and TailwindCSS.</p>
                     </div>
-                </div>
-                <div class="project-card glass-card reveal-on-scroll delay-1">
-                    <div class="project-image" style="background: linear-gradient(45deg, #4c1d95, #7c3aed);"></div>
-                    <div class="project-info">
-                        <h3>E-Commerce Platform</h3>
-                        <p>A headless e-commerce solution with dynamic routing and lightning-fast edge rendering.</p>
-                        <div class="project-tech">
-                            <span>Next.js</span>
-                            <span>Stripe</span>
+                    <div class="service-card reveal delay-1">
+                        <div class="service-icon">
+                            <img src="dev_backend_1775879833722.png" alt="Backend Development">
                         </div>
-                        <a href="#" class="project-link">View Project →</a>
+                        <h3>Backend & APIs</h3>
+                        <p>Designing robust, secure, and scalable backend architectures. Creating RESTful and GraphQL APIs using Node.js and Python.</p>
                     </div>
-                </div>
-                <div class="project-card glass-card reveal-on-scroll delay-2">
-                    <div class="project-image" style="background: linear-gradient(45deg, #064e3b, #059669);"></div>
-                    <div class="project-info">
-                        <h3>AI SaaS Application</h3>
-                        <p>An intuitive interface for a complex machine learning API, featuring real-time updates.</p>
-                        <div class="project-tech">
-                            <span>Vue 3</span>
-                            <span>Python</span>
+                    <div class="service-card reveal delay-2">
+                        <div class="service-icon">
+                            <!-- Utilizing hero image for the 3rd placeholder to align with tech -->
+                            <img src="dev_hero_1775879778802.png" alt="Infrastructure & DB">
                         </div>
-                        <a href="#" class="project-link">View Project →</a>
+                        <h3>Database Architecture</h3>
+                        <p>Structuring relational and NoSQL databases for high speed and data integrity using PostgreSQL, MongoDB, and Redis caching.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="contact">
-            <div class="contact-card glass-card reveal-on-scroll">
-                <h2 class="section-title">Ready to Start?</h2>
-                <p>I'm currently available for freelance work and open to new opportunities.</p>
-                <form id="contact-form" class="contact-form">
-                    <div class="input-group">
-                        <input type="text" id="name" required placeholder="Your Name">
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing-section section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <p class="section-subtitle">Project Scopes</p>
+                    <h2 class="section-title">Development Solutions</h2>
+                </div>
+                <div class="pricing-grid">
+                    <!-- Starter Package -->
+                    <div class="pricing-card reveal">
+                        <div class="pricing-header">
+                            <h3>Landing Page</h3>
+                            <div class="price">
+                                <span class="currency">$</span>800
+                            </div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Responsive Design</li>
+                            <li>High-Performance Setup</li>
+                            <li>SEO Optimization</li>
+                            <li>Contact Form Integration</li>
+                        </ul>
+                        <a href="#contact" class="btn-outline">Initiate Project</a>
                     </div>
-                    <div class="input-group">
-                        <input type="email" id="email" required placeholder="Your Email">
+
+                    <!-- Premium Package -->
+                    <div class="pricing-card reveal delay-1" style="transform: scale(1.05); box-shadow: 0 0 40px rgba(157, 0, 255, 0.2); border-color: var(--color-accent-purple);">
+                        <div class="pricing-header">
+                            <h3>Full-Stack Web App</h3>
+                            <div class="price">
+                                <span class="currency">$</span>3k
+                            </div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Custom User Authentication</li>
+                            <li>Database Integration</li>
+                            <li>Dynamic API Setup</li>
+                            <li>Payment Gateway (Stripe)</li>
+                            <li>Cloud Deployment Strategy</li>
+                        </ul>
+                        <a href="#contact" class="btn-primary" style="text-align: center; display: block; border-radius: 8px;">Initiate Project</a>
                     </div>
-                    <div class="input-group">
-                        <textarea id="message" rows="5" required placeholder="Your Message"></textarea>
+
+                    <!-- Elite Package -->
+                    <div class="pricing-card reveal delay-2">
+                        <div class="pricing-header">
+                            <h3>Enterprise System</h3>
+                            <div class="price">
+                                <span class="currency">Custom</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Microservices Architecture</li>
+                            <li>Legacy Code Refactoring</li>
+                            <li>Advanced Cloud Infrastructure</li>
+                            <li>Security Audits</li>
+                            <li>Dedicated Support</li>
+                        </ul>
+                        <a href="#contact" class="btn-outline">Contact for Details</a>
                     </div>
-                    <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
-                </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section section">
+            <div class="contact-container reveal">
+                <p class="section-subtitle">Let's Build</p>
+                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Ready to Scale? Let's Work Together!</h2>
+                <p style="margin-bottom: 2rem;">I know what it takes to build robust web applications, optimize your workflow, and take the stress off your plate. Let's work together to unlock your business's full potential!</p>
+                <a href="mailto:cirilosere51@gmail.com" class="btn-primary" style="margin-bottom: 4rem;">Schedule A Discovery Call</a>
+
+                <div class="contact-info-grid">
+                    <div class="contact-item">
+                        <div class="contact-icon">🌐</div>
+                        <div>
+                            <h4>Website</h4>
+                            <p>github.com/cirilosere51</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>0951 291 9290</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>cirilosere51@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <div>
+                            <h4>Availability</h4>
+                            <p>Working Remotely</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 John Doe. Designed & Built with passion.</p>
-            <div class="social-links">
-                <a href="#">GitHub</a>
-                <a href="#">LinkedIn</a>
-                <a href="#">Twitter</a>
-            </div>
+        <div class="container reveal">
+            <p>&copy; 2026 Crafted with precision and clean code.</p>
         </div>
     </footer>
 

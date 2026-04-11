@@ -1,69 +1,61 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Navigation background change on scroll
-    const navbar = document.getElementById('navbar');
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
+    // 1. Smooth Scrolling for Navigation Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if(targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if(targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
     });
 
-    // 2. Intersection Observer for Reveal Animations
+    // 2. Intersection Observer for Scroll Animations
     const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.15
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
     };
 
-    const revealObserver = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                // Optional: unobserve after revealing if you only want it to animate once
+                entry.target.classList.add('active');
+                // Optional: Stop observing once revealed
                 // observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    const revealElements = document.querySelectorAll('.reveal-on-scroll');
-    revealElements.forEach(el => revealObserver.observe(el));
+    // Apply observer to all elements with 'reveal' class
+    document.querySelectorAll('.reveal').forEach((element) => {
+        observer.observe(element);
+    });
 
-    // 3. Contact Form Submission Stub
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            
-            // Simple visual feedback
-            const submitBtn = contactForm.querySelector('.submit-btn');
-            const originalText = submitBtn.textContent;
-            
-            submitBtn.textContent = 'Sending...';
-            submitBtn.style.opacity = '0.7';
-            submitBtn.disabled = true;
+    // 3. Navbar backdrop effect on scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(10, 10, 11, 0.98)';
+            navbar.style.boxShadow = '0 2px 15px rgba(0,0,0,0.5)';
+        } else {
+            navbar.style.background = 'rgba(10, 10, 11, 0.85)';
+            navbar.style.boxShadow = 'none';
+        }
+    });
 
-            // Simulate API call
-            setTimeout(() => {
-                submitBtn.textContent = 'Message Sent!';
-                submitBtn.style.background = '#059669'; // Success green
-                submitBtn.style.opacity = '1';
-                
-                // Form reset
-                contactForm.reset();
-
-                // Revert button after 3 seconds
-                setTimeout(() => {
-                    submitBtn.textContent = originalText;
-                    submitBtn.style.background = ''; // Revert to class style
-                    submitBtn.disabled = false;
-                }, 3000);
-            }, 1500);
+    // Trigger initial reveal for elements already in viewport
+    setTimeout(() => {
+        document.querySelectorAll('.reveal').forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if(rect.top < window.innerHeight) {
+                el.classList.add('active');
+            }
         });
-    }
+    }, 100);
 });
