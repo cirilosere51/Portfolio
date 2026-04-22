@@ -150,7 +150,12 @@ h1, h2, h3, h4 {
   border: none;
   cursor: pointer;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
 }
 
 .menu-toggle span {
@@ -158,6 +163,19 @@ h1, h2, h3, h4 {
   height: 2px;
   background: var(--text-primary);
   border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+.menu-toggle.is-active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.is-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.is-active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 /* Hero Section */
@@ -699,31 +717,106 @@ h1, h2, h3, h4 {
 @media (max-width: 768px) {
   .navbar {
     padding: 10px 20px;
+    border-radius: 30px;
   }
   
   .nav-panel {
-    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: var(--surface);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    transition: 0.5s cubic-bezier(0.7, 0, 0.3, 1);
+    z-index: 1000;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+  }
+  
+  .nav-panel.is-open {
+    right: 0;
+  }
+  
+  .nav-panel a {
+    font-size: 1.5rem;
+    color: var(--text-primary);
   }
   
   .menu-toggle {
     display: flex;
   }
   
+  .hero {
+    padding-top: 100px;
+    gap: 30px;
+  }
+
   .hero-content h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   
   .services-header h2 {
-    font-size: 2.2rem;
+    font-size: 2rem;
+  }
+
+  .experience-stats {
+    justify-content: center;
+    gap: 20px;
   }
   
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .service-card {
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .service-icon {
+    min-width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+  }
+
+  .split-layout {
+    gap: 40px;
+  }
+
+  .contact-grid {
+    gap: 40px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
   }
   
   .footer-bottom {
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
     text-align: center;
+    padding: 30px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-stats {
+    flex-direction: column;
+    align-items: center;
   }
 }
