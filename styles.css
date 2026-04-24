@@ -56,13 +56,16 @@ img {
 }
 
 .section {
-  padding: 100px 20px;
+  padding: 50px 20px;
   max-width: var(--container);
   margin: 0 auto;
 }
 
 /* Typography */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-heading);
   font-weight: 800;
   line-height: 1.1;
@@ -375,11 +378,11 @@ h1, h2, h3, h4 {
 /* Skills & Experience Section */
 .split-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 100px;
 }
 
-.skills-column h2, .experience-column h2 {
+.skills-column h2,
+.experience-column h2 {
   font-size: 2.5rem;
   margin-bottom: 40px;
   text-align: center;
@@ -420,7 +423,7 @@ h1, h2, h3, h4 {
 
 .timeline {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   gap: 30px;
 }
 
@@ -440,15 +443,7 @@ h1, h2, h3, h4 {
   border-radius: 50%;
 }
 
-.timeline-item::after {
-  content: "";
-  position: absolute;
-  left: 5px;
-  top: 25px;
-  width: 2px;
-  height: calc(100% + 15px);
-  background: var(--line);
-}
+
 
 .timeline-item:last-child::after {
   display: none;
@@ -609,7 +604,8 @@ h1, h2, h3, h4 {
   color: var(--text-secondary);
 }
 
-.contact-text a, .contact-text p {
+.contact-text a,
+.contact-text p {
   font-size: 1.1rem;
   font-weight: 700;
 }
@@ -689,25 +685,25 @@ h1, h2, h3, h4 {
     text-align: center;
     padding-top: 150px;
   }
-  
+
   .hero-text {
     margin: 0 auto 35px;
   }
-  
+
   .hero-visual {
     justify-content: center;
   }
-  
+
   .services-container {
     flex-direction: column;
     gap: 50px;
   }
-  
+
   .split-layout {
     grid-template-columns: 1fr;
     gap: 60px;
   }
-  
+
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 60px;
@@ -719,7 +715,7 @@ h1, h2, h3, h4 {
     padding: 10px 20px;
     border-radius: 30px;
   }
-  
+
   .nav-panel {
     position: fixed;
     top: 0;
@@ -736,20 +732,20 @@ h1, h2, h3, h4 {
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
     display: flex;
   }
-  
+
   .nav-panel.is-open {
     right: 0;
   }
-  
+
   .nav-panel a {
     font-size: 1.5rem;
     color: var(--text-primary);
   }
-  
+
   .menu-toggle {
     display: flex;
   }
-  
+
   .hero {
     padding-top: 100px;
     gap: 30px;
@@ -758,16 +754,18 @@ h1, h2, h3, h4 {
   .hero-content h1 {
     font-size: 2.5rem;
   }
-  
+
   .services-header h2 {
     font-size: 2rem;
+    display: flex;
+    justify-content: center;
   }
 
   .experience-stats {
     justify-content: center;
     gap: 20px;
   }
-  
+
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
@@ -797,7 +795,7 @@ h1, h2, h3, h4 {
     gap: 30px;
     text-align: center;
   }
-  
+
   .footer-bottom {
     flex-direction: column;
     gap: 15px;
@@ -816,7 +814,7 @@ h1, h2, h3, h4 {
   }
 
   .experience-stats {
-    flex-direction: column;
+
     align-items: center;
   }
 }
