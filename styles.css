@@ -298,7 +298,7 @@ h4 {
 
 /* Services Section */
 .services-section {
-  background: #121211;
+  background: transparent;
 }
 
 .services-container {
@@ -960,4 +960,32 @@ h4 {
     text-align: center;
     gap: 10px;
   }
+}
+
+/* Card Hover Glow System */
+.service-card, .skill-item, .project-card, .experience-stats {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before, .skill-item::before, .project-card::before, .experience-stats::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle 250px at var(--mouse-x, -9999px) var(--mouse-y, -9999px),
+    rgba(253, 146, 75, 0.15),
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 5;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.service-card:hover::before, .skill-item:hover::before, .project-card:hover::before, .experience-stats:hover::before {
+  opacity: 1;
 }

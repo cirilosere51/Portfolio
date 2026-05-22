@@ -305,6 +305,34 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+
+        // Set fixed background attachment on body for smooth tracking
+        document.body.style.backgroundAttachment = 'fixed';
+
+        // Ambient body glow following the cursor
+        document.addEventListener('mousemove', e => {
+            document.body.style.backgroundImage = `
+                radial-gradient(circle 800px at ${e.clientX}px ${e.clientY}px,
+                rgba(253, 146, 75, 0.20),
+                var(--bg) 20%)
+            `;
+        });
+
+        // Update CSS variables for container-specific hover glows
+        const cards = document.querySelectorAll('.service-card, .skill-item, .project-card, .experience-stats');
+
+        cards.forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+
+    </script>
 </body>
 
 </html>
